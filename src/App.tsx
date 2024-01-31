@@ -8,7 +8,6 @@ import './App.css';
 import useStorageState from './hooks/useStorageHook';
 import loading from './assets/loading.gif';
 import axios from 'axios';
-import { motion } from 'framer-motion';
 import {
   Story,
   StoriesState,

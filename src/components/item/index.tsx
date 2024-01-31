@@ -17,7 +17,6 @@ const Item: React.FC<ItemProps> = ({item,onRemoveItem}) : JSX.Element => {
         y: 0, x: '0', opacity: 1 
       }
     }
-    console.log('B:Item')
     return (
       <motion.li    
       variants={fadeInAnimation}  
