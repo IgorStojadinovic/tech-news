@@ -1,0 +1,36 @@
+.search-input-field {
+    text-align: center;
+    border: 1px solid #b3b3b3;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+}
+
+
+.search-input-field:focus {
+    outline: none;
+}
+
+
+.search-input-field:focus-visible {
+    border: 1px solid #747bff;
+    border-radius: 5px;
+}
+
+
+.button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 50%;
+}
+ 
+
+.button:focus {
+    outline: none;
+}
+
+
+.button:focus-visible {
+    border: 1px solid #747bff;
+    border-radius: 5px;
+}

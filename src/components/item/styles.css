@@ -1,0 +1,31 @@
+.list-item {
+    flex:1;
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+    margin: 20px 0px 20px 0;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+  
+
+.list-item-info {
+    display: flex;
+    justify-content:space-around;
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 100%; 
+}
+
+
+.list-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+  
