@@ -75,6 +75,7 @@ button:focus-visible {
   font-weight: bold;
   margin: 1rem 0rem 1rem 0;
   color: #F9F5FF;
+
 }
 
 .gif {
@@ -85,9 +86,10 @@ button:focus-visible {
 
 .sort-container {
   display: flex;
-  justify-content: space-around;
-  margin:2rem 0rem 2rem 0rem;
-  align-items: center;
+  justify-content:space-between;
+  align-self: flex-end;
+  width: 15%;
+  text-align: center;
 }
 
 .sort-buttons {
@@ -101,13 +103,20 @@ button:focus-visible {
 .sort-button {
   padding: 5px;
 }
+.sort-header{
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .sort-select {
   outline: none;
   padding: 5px;
-  margin: 0rem 0rem 1rem 1rem;
   border-radius: 4px;
-  width: 25%;
+  width: 45%;
   align-self: center;
 }
 
@@ -129,3 +138,4 @@ button:focus-visible {
 .github-link:hover{
   font-size: 40px;
 }
+
