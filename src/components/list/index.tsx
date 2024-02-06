@@ -5,6 +5,7 @@ import './styles.css';
 
 const List: React.FC<ListProps> = ({list,onRemoveItem}) => {
     const renderList = useMemo(() => {
+      
     return (
       <ul className='ul-container'>
       {list.map((item) => 

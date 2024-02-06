@@ -93,3 +93,28 @@ button:focus-visible {
 .gif {
   height: 200px;
 }
+
+.sort-container {
+  display: flex;
+  justify-content: space-around;
+  margin:2rem 0rem 2rem 0rem;
+  align-items: center;
+}
+.sort-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.sort-button {
+  padding: 5px;
+}
+
+.sort-select {
+  outline: none;
+  padding: 5px;
+  margin: 0rem 0rem 1rem 1rem;
+  border-radius: 4px;
+}

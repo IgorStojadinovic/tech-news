@@ -15,6 +15,9 @@ import {
 } from './types';
 import SearchForm from './components/search-form';
 import List from './components/list';
+import loadash from 'lodash';
+import { FaCaretUp,FaCaretDown } from "react-icons/fa";
+
 
 
 const storiesReducer = (state:StoriesState,action:StoriesAction) => {
@@ -38,6 +41,16 @@ const storiesReducer = (state:StoriesState,action:StoriesAction) => {
         isLoading: false,
         isError: true,
         };
+      case 'SORT_STORIES_DESC':
+        return {
+          ...state,
+          data: action.payload
+        };
+      case  'SORT_STORIES_ASC':
+        return {
+          ...state,
+          data: action.payload
+        }
       case 'REMOVE_STORY':
         return {
         ...state,
@@ -73,7 +86,7 @@ const App = () => {
           payload: result.data.hits, 
         });
       },1000)
-        
+      console.log('Fetch',stories.data)
       } catch {
         dispatchStories({
           type:'STORIES_FETCH_FAILURE'
@@ -106,12 +119,61 @@ const App = () => {
       });
   },[])
 
+   const handleSort = (e : React.ChangeEvent<HTMLInputElement>) =>{
+    let sortedStories;
+    switch(e.target.value){
+      case 'points-asc':
+        sortedStories = loadash.sortBy(stories.data,['points'])
+        dispatchStories({
+          type:'SORT_STORIES_ASC',
+          payload: sortedStories
+        })
+        break;
+      case 'points-desc':
+        sortedStories = loadash.orderBy(stories.data,['points'],['desc'])
+        dispatchStories({
+          type:'SORT_STORIES_DESC',
+          payload: sortedStories
+        })
+        break;
+      case 'comments-asc':
+        sortedStories = loadash.sortBy(stories.data,['num_comments'])
+        dispatchStories({
+          type:'SORT_STORIES_ASC',
+          payload: sortedStories
+        })
+        break;
+      case 'comments-desc':
+        sortedStories = loadash.orderBy(stories.data,['num_comments'],['desc'])
+        dispatchStories({
+          type:'SORT_STORIES_DESC',
+          payload: sortedStories
+        })
+        break;
+      default: 
+       sortedStories = stories.data;
+  
+    }
+   }
+
 
   return (
     <div className='main-container'>
       <h1>TECH NEWS</h1>
       <p className='sub-header'>search for any topic (eg. react,openIA,etc..)</p>
       <SearchForm searchTerm={searchTerm} onSearchSubmit={handleSearchSubmit} onSearhInput={handleSearchInput}/>
+        { stories.data.length > 0  &&  (
+        <>
+          <label htmlFor='sort'>Sort by:</label>
+          <select className="sort-select" id="sort" onChange={(e) => {handleSort(e)}}>
+            <option value='points-asc'>Points ASC</option>
+            <option value='points-desc'>Points DESC</option>
+            <option value='comments-asc'>Comments ASC</option>
+            <option value='comments-desc' selected>Comments DESC</option>
+          </select>
+        </>
+        ) }
+       
       <hr/>
       {stories.isError && <p>Something whent wrong ...</p>}
       {stories.isLoading ? <img src={loading} className='gif' alt='gif'/> : <List list={stories.data} onRemoveItem={handleRemoveStory}/>}

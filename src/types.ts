@@ -47,11 +47,24 @@ export type StoriesRemoveAction = {
     payload: Story;
 }
 
+export type StoriesStortDESCAction = {
+    type: 'SORT_STORIES_DESC',
+    payload: Stories
+}
+
+export type StoriesSortASCAction = {
+    type: 'SORT_STORIES_ASC'
+    payload: Stories
+}
+
+
 export type StoriesAction =
 StoriesFetchInitAction
 | StoriesFetchSuccessAction
 | StoriesFetchFailureAction
-| StoriesRemoveAction;
+| StoriesRemoveAction
+| StoriesStortDESCAction
+| StoriesSortASCAction;
 
 export type SearchFromPops = {
     searchTerm: string;
