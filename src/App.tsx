@@ -16,7 +16,7 @@ import {
 import SearchForm from './components/search-form';
 import List from './components/list';
 import loadash from 'lodash';
-import { FaCaretUp,FaCaretDown } from "react-icons/fa";
+import { FaCaretUp,FaCaretDown ,FaGithub} from "react-icons/fa";
 
 
 
@@ -159,8 +159,14 @@ const App = () => {
 
   return (
     <div className='main-container'>
+
       <h1>TECH NEWS</h1>
+     
+     <a className='github-link' href="https://github.com/IgorStojadinovic/tech-news" target='_blank' rel="noreferrer">
+      <FaGithub color='white'/>
+      </a> 
       <p className='sub-header'>search for any topic (eg. react,openIA,etc..)</p>
+  
       <SearchForm searchTerm={searchTerm} onSearchSubmit={handleSearchSubmit} onSearhInput={handleSearchInput}/>
         { stories.data.length > 0  &&  (
         <>

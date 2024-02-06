@@ -115,3 +115,17 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
 }
+
+.github-link{
+   position: fixed;
+   bottom: 0;
+   right: 0;
+   font-size: 35px;
+   padding: 20px;
+   color:white;
+   transition: all 0.2s ease-in-out;
+}
+
+.github-link:hover{
+  font-size: 40px;
+}
