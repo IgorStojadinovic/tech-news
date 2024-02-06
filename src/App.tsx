@@ -85,7 +85,7 @@ const App = () => {
           type: 'STORIES_FETCH_SUCCESS',
           payload: result.data.hits, 
         });
-      },1000)
+      },5)
       console.log('Fetch',stories.data)
       } catch {
         dispatchStories({
@@ -164,7 +164,7 @@ const App = () => {
       <SearchForm searchTerm={searchTerm} onSearchSubmit={handleSearchSubmit} onSearhInput={handleSearchInput}/>
         { stories.data.length > 0  &&  (
         <>
-          <label htmlFor='sort'>Sort by:</label>
+          <label htmlFor='sort' className='sub-header'>Sort by:</label>
           <select className="sort-select" id="sort" onChange={(e) => {handleSort(e)}}>
             <option value='points-asc'>Points ASC</option>
             <option value='points-desc'>Points DESC</option>
@@ -173,8 +173,7 @@ const App = () => {
           </select>
         </>
         ) }
-       
-      <hr/>
+
       {stories.isError && <p>Something whent wrong ...</p>}
       {stories.isLoading ? <img src={loading} className='gif' alt='gif'/> : <List list={stories.data} onRemoveItem={handleRemoveStory}/>}
     </div>
