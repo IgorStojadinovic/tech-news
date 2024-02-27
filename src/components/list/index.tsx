@@ -7,7 +7,13 @@ const List: React.FC<ListProps> = ({list,onRemoveItem}) => {
     const renderList = useMemo(() => {
       
     return (
-      <ul className='ul-container'>
+      <table className='ul-container'>
+        <tr className='t-row'>
+          <th className="t-head">Title</th>
+          <th className="t-head">Atuthor</th>
+          <th className="t-head">Comments</th>
+          <th className="t-head">Points</th>
+        </tr>
       {list.map((item) => 
         <Item
         key={item.objectID} 
@@ -15,7 +21,7 @@ const List: React.FC<ListProps> = ({list,onRemoveItem}) => {
             onRemoveItem={onRemoveItem}
         />
       )}
-    </ul>
+    </table>
     )
   },[list,onRemoveItem]);
     

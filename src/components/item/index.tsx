@@ -27,30 +27,21 @@ const Item: React.FC<ItemProps> = ({item,onRemoveItem}) : JSX.Element => {
       }
     }
     return (
-      <motion.li    
-      variants={ fadeOutAnimation }  
-      initial='inital'
-      whileInView='animate'
-      viewport={{
-        once: true,
-      }}  
-      className='list-item'>
-        <span>
-          <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a>
-        </span>
-        <div className='list-item-info'>
-          <div className='list-text'>
-            <p  className='bold'>Author: </p><span>{item.author.length > 9 && item.author.slice(0,12) + '...' }</span>
-          </div>
-          <div  className='list-text'>
-            <p  className='bold'>Comments:</p> <span>{item.num_comments}</span>
-          </div>
-          <div  className='list-text'> 
-            <p  className='bold'>Points:</p><span>{item.points}</span>
-          </div>
-        </div>
-        <button className='button' onClick={handleRemoveItem}>Remove </button>
-      </motion.li>
+      <tr className='t-row'>
+        <td className="t-head">
+          <a href={item.url} target="_blank" rel="noreferrer" className="bold">{item.title}</a>
+        </td>
+        <td className="t-head">
+          <p className="bold">{item.author.length ? item.author : 'unknown'  }</p>
+        </td>
+        <td className="t-head">
+          <p className="bold">{item.num_comments}</p>
+        </td>
+        <td className="t-head">
+         <p className="bold">{item.points}</p>
+        </td>
+      </tr>
+     
     )
   
     },[item,onRemoveItem])

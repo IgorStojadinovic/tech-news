@@ -1,5 +1,19 @@
 .ul-container {
+    color:white;
     display: flex;
     flex-wrap: wrap;
     gap: 4rem;
+}
+
+
+.t-row {
+    margin-top: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.t-head {
+    width: 25%;
 }
