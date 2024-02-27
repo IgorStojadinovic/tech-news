@@ -6,7 +6,6 @@ import {
   useState } from 'react';
 import './App.css';
 import useStorageState from './hooks/useStorageHook';
-import loading from './assets/loading.gif';
 import axios from 'axios';
 import {
   Story,
@@ -181,7 +180,7 @@ const App = () => {
         ) }
 
       {stories.isError && <p>Something whent wrong ...</p>}
-      {stories.isLoading ? <img src={loading} className='gif' alt='gif'/> : <List list={stories.data} onRemoveItem={handleRemoveStory}/>}
+      {stories.isLoading ? "Loading..." : <List list={stories.data} onRemoveItem={handleRemoveStory}/>}
     </div>
   );
 }
