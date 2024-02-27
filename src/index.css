@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,9 +31,11 @@ a:hover {
   color: #FAB258;
 }
 
+
 p,span {
   color: #27252B;
 }
+
 
 body {
   padding: 5rem;
@@ -41,11 +44,13 @@ body {
   min-height: 919px;
 }
 
+
 h1 {
   color: white;
   font-size: 3.2em;
   line-height: 1.1;
 }
+
 
 button {
   border-radius: 8px;
@@ -60,14 +65,17 @@ button {
   background-color: #FAB258;
 }
 
+
 button:hover {
   background-color: #BA9970;
 }
+
 
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
 
 .sub-header {
   text-transform: uppercase;
@@ -78,19 +86,22 @@ button:focus-visible {
 
 }
 
+
 .gif {
   height: 200px;
   width: 200px;
   align-self: center;
 }
 
+
 .sort-container {
   display: flex;
   justify-content:space-between;
   align-self: flex-end;
-  width: 15%;
+  width: 30%;
   text-align: center;
 }
+
 
 .sort-buttons {
   display: flex;
@@ -100,17 +111,23 @@ button:focus-visible {
   padding-left: 2rem;
 }
 
+
 .sort-button {
   padding: 5px;
 }
+
+
 .sort-header{
   color: white;
   font-weight: bold;
   text-transform: uppercase;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  flex:1;
+  padding-right: 16px;
 }
+
 
 .sort-select {
   outline: none;
@@ -120,10 +137,12 @@ button:focus-visible {
   align-self: center;
 }
 
+
 .main-container {
   display: flex;
   flex-direction: column;
 }
+
 
 .github-link{
    position: fixed;
@@ -134,6 +153,7 @@ button:focus-visible {
    color:white;
    transition: all 0.2s ease-in-out;
 }
+
 
 .github-link:hover{
   font-size: 40px;
