@@ -13,4 +13,5 @@ export type Stories = Story[];
 export type ListProps = {
     list: Stories;
     onRemoveItem: (item: Story) => void;
+    sortItems:(e:React.ChangeEvent<HTMLInputElement>) => void;
   };

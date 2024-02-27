@@ -17,3 +17,8 @@
 .t-head {
     width: 25%;
 }
+
+
+.sort-select {
+    flex:1
+}

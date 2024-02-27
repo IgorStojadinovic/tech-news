@@ -27,7 +27,14 @@ const Item: React.FC<ItemProps> = ({item,onRemoveItem}) : JSX.Element => {
       }
     }
     return (
-      <tr className='t-row'>
+
+      <motion.tr   
+      variants={fadeOutAnimation }
+      initial='inital'
+      whileInView='animate'
+      viewport={{
+        once: true,
+      }}className='t-row'>
         <td className="t-head">
           <a href={item.url} target="_blank" rel="noreferrer" className="bold">{item.title}</a>
         </td>
@@ -40,7 +47,10 @@ const Item: React.FC<ItemProps> = ({item,onRemoveItem}) : JSX.Element => {
         <td className="t-head">
          <p className="bold">{item.points}</p>
         </td>
-      </tr>
+        <td className='t-head'>
+        <button className='button' onClick={handleRemoveItem}>Remove </button>
+        </td>
+      </motion.tr>
      
     )
   
@@ -52,3 +62,6 @@ const Item: React.FC<ItemProps> = ({item,onRemoveItem}) : JSX.Element => {
   
 
   export default Item;
+
+  
+  

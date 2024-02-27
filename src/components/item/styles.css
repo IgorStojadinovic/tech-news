@@ -43,5 +43,11 @@
 .t-head {
     width: 25%;
     color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-  
+
+.button {
+    flex:1;
+}

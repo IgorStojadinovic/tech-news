@@ -165,22 +165,9 @@ const App = () => {
       <FaGithub color='white'/>
       </a> 
       <p className='sub-header'>search for any topic (eg. react,openIA,etc..)</p>
-  
       <SearchForm searchTerm={searchTerm} onSearchSubmit={handleSearchSubmit} onSearhInput={handleSearchInput}/>
-        { stories.data.length > 0  &&  (
-        <div className='sort-container'>
-          <label htmlFor='sort' className='sort-header'>Sort by:</label>
-          <select className="sort-select" id="sort" onChange={(e) => {handleSort(e)}}>
-            <option value='points-asc'>Points ASC</option>
-            <option value='points-desc'>Points DESC</option>
-            <option value='comments-asc'>Comments ASC</option>
-            <option value='comments-desc' selected>Comments DESC</option>
-          </select>
-        </div>
-        ) }
-
       {stories.isError && <p>Something whent wrong ...</p>}
-      {stories.isLoading ? "Loading..." : <List list={stories.data} onRemoveItem={handleRemoveStory}/>}
+      {stories.isLoading ? "Loading..." : <List list={stories.data} onRemoveItem={handleRemoveStory} sortItems={handleSort}/>}
     </div>
   );
 }
